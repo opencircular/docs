@@ -6,21 +6,6 @@ nav_order: 1
 has_children: true
 ---
 
-Intro
-
-- quick start
-    - architecture
-    - frontend
-        - env config
-    - backend
-        - database
-        - env config
-    - blockchain
-        - hyperledger
-- business green paper
-- technical green paper
-- github
-
 
 Mr. Green Kenya Pilot
 --------------------
@@ -37,15 +22,4 @@ App Walkthu Video
 Business Green Paper
 -------------------
 <embed src="https://drive.google.com/viewerng/
-viewer?embedded=true&url=https://opencircular.github.io/docs/assets/PlastiCoinGreenPaper.pdf" width="500" height="375">
-
-```markdown
-one
-two
-three
-```
-
-{% highlight js %}
-// No line numbers
-var a = 1;
-{% endhighlight %}
+viewer?embedded=true&url=https://opencircular.github.io/docs/assets/PlastiCoinGreenPaper.pdf" width="100%" height="900">
