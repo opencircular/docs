@@ -30,7 +30,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 search_enabled: true
 remote_theme: pmarsceill/just-the-docs
-
+markdown: kramdown
 
 # Build settings
 theme: just-the-docs
