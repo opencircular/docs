@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Open Circular Docs
+title: OpenCircular Docs
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -29,7 +29,9 @@ twitter_username: jekyllrb
 github_username:  jekyll
 remote_theme: pmarsceill/just-the-docs
 markdown: kramdown
-logo: "/assets/images/logo.png"
+# logo: "/assets/images/logo.png"
+# color_scheme: dark
+
 
 
 # Build settings
@@ -81,3 +83,12 @@ search:
   # Enable or disable the search button that appears in the bottom right corner of every page
   # Supports true or false (default)
   button: false
+
+# line number for code
+compress_html:
+  ignore:
+    envs: all
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
