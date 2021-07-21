@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Child
-permalink: /home/child
+permalink: /about/child
 nav_order: 1
-parent: Intro
+parent: About
 ---
 
 Child
