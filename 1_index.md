@@ -16,7 +16,9 @@ and handle new hybrid materials. Third-world countries are causing plastic leaka
 to lack of municipal recycling programs. A new system needs to be created to solve these global
 problems.
 
-In opening, here is a quote from the book “The Circular Economy: A wealth of Flows” by Ken Webster:
+![Image](./assets/images/logo.png)
+
+In opening, here is a quote from the book `“The Circular Economy: A wealth of Flows”` by Ken Webster:
 
 > “Information technology potentially allows the tools of the economy, the medium-and-long-life durable
 products, to become the basis for a market in the services they provide, rather than just selling the
@@ -24,7 +26,6 @@ product itself. [...] Information technology allows easy administration and the 
 transactions. It even allows the creation of designer currencies to reach the parts of the economy not
 served by the conventional monocultures.”
 
-![Image](./assets/images/logo.png)
 
 Solution Proposal
 ---------------
