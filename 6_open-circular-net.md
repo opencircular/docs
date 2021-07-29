@@ -2,7 +2,7 @@
 layout: page
 title: Open Circular Network
 permalink: /open-circular-network
-nav_order: 6
+nav_order: 7
 has_children: false
 ---
 
