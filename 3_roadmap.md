@@ -12,3 +12,7 @@ Roadmap
 ![Image](./assets/images/roadmap1.png)
 
 ![Image](./assets/images/roadmap2.png)
+
+![Image](./assets/images/roadmap-app.png)
+
+![Image](./assets/images/roadmap-mga.png)
