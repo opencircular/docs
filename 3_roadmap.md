@@ -12,8 +12,7 @@ Roadmap
 Rough Timeline
 --------------
 
-![Image](./assets/images/timeline1.png)
-![Image](./assets/images/timeline2.png)
+![Image](./assets/images/timeline.png)
 
 
 High Level Milestones
