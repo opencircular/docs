@@ -13,13 +13,17 @@ The Open Circular Network handles:
 - Tracking and incentivising the flow of materials 
 - Matchmaking: matching consumers with recycling to collectors/recycling centers (Smart Route Matchmaking Protocol)
 
-And it does all this without a centralized third party using a distributed ledger.
+![Image](./assets/images/open-circular-arch.png)
 
-In the past legacy systems were okay at tracking large flows of material via shipping ports. This resulted in a monopoly of  import and export data. The problem with this system is that you have no data
-(or incentive) to enable a flow of material from the local consumers to larger aggregation points, then to recycling centers, then to global ports (if needed. keep it local if possible). It also lead to cartels running
-centralized facilies. 
+Legacy System
+-------------
+In the past legacy systems were okay at tracking large flows of material via shipping ports. If you are a company that needs to move an item you typically call up a central company. The central company aggrates your shipping request with many other companies. Eventually when the size of the shipment reached a threshhold it was shipped. This resulted in a monopoly of  import and export data. The problem with this system is that it does not include the local consumer and does not stimulate local entrepreneurial businesses to organically form. He does not have access to this central database. He is usually part of an informal system in regards to recycled material. In this system there is no incentive to enable a flow of material from the local consumers to larger aggregation points, then to recycling centers, then to global ports (if needed..keep it local if possible). It also lead to cartels running centralized facilies. 
 
-The Open Circular Network and specifically the "Smart Route Matchmaking Protocol" can be broken up into the following components:
+Future System
+-------------
+The solution is simple. Don't store all that data on a database system that is owned by one company. Instead, save that data on a distributed ledger that is ran by many companies and individuals in regions all around the world. The network can be broken up into regions using channels. The channel regions can be ran by anyone (informal/formal, gov/business/NGO/individual). 
+
+The Open Circular Network tries to solve this problem. The enabling technology is the "Smart Route Matchmaking Protocol". It can be broken down into the following components running as smart contracts on a distributed ledger:
 - Request Orderbook
 - Smart Route Queue
 - Tracing Ledger
@@ -28,9 +32,8 @@ The Open Circular Network and specifically the "Smart Route Matchmaking Protocol
 - Recycling Center Exchange Rates
 - Reputation Ratings
 
-Read more in about this in the Greenpaper on page 34 titled "Smart Route Matchmaking Protocol"
-
-The network can be broken up into regions using channels. The channel regions can be ran by anyone (informal/formal, gov/biz/individual). 
+Read more on page 34 of the Greenpaper in the section titled "Smart Route Matchmaking Protocol"
 
 
-![Image](./assets/images/open-circular-arch.png)
+
+
