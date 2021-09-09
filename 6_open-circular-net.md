@@ -58,8 +58,10 @@ Components of the Smart Route Matchmaking Protocol
 
 Workflow
 ==============
+
 (1) Request 
 ------------
+
 A pickup request is entered into the “Request Orderbook” by the consumer with recyclables as either a Market order or Bid order.
 
 - Market Order
@@ -95,7 +97,7 @@ The offer is pending until the “Smart Route Protocol” adds it to a route. Th
 
 **Data Privacy**
 How do we aggreate GPS locations into a route if the data is encrypted?
-1. We could use a feature in Hyperledger Fabric called "Private Collections" to encrypt the GPS data in the channel to only the Oracle. The Oracle could be setup as a separate organization on the channel.
+1. We could use a feature in Hyperledger Fabric called "Private Collections" to encrypt the GPS data in the channel to only the Oracle. The Oracle could be setup as a separate organization on the channel. The Oracle would be the only organization that would decrypt the data and create the smart route.
 2. We could use homomorphic encryption to calculate the encrypted distance between encrypted GPS locations and get the encrypted answer. *More research
 
 If an expiration date on a request is met the user can pay the market fee to make it into the next round, or simply wait to see if the request is fulfilled in the subsequent round. 
