@@ -49,12 +49,12 @@ Components of the Smart Route Matchmaking Protocol
     - Recycling Center Exchange Rates
     - Reputation Ratings
 - Oracle
-    - Pull in real life data into the smart contract
+    - The Oracle pulls real life data into the smart contract
         - Traffic API
         - Directions/Mapping API
-        - AI to predict the best routexs?
+        - AI to predict the best routes???
 
-
+Next, let's go over the workflow of a typical recycling request.
 
 Workflow
 ==============
