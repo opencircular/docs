@@ -108,7 +108,7 @@ The "Smart Route Matchmaking protocol" is similar how the Bitcoin protocol works
 
 (4) Match 
 ----------
-When all the constraints are met, the Smart Route is given to the collector by the Matchmaker Oracle Engine and the status of the pickup in the Orderbook is changed to “Reserved”. 
+When all the constraints are met and we reach the end of the round, the Smart Route is given to the collector by the Matchmaker Oracle Engine and the status of the pickup in the Orderbook is changed to “Reserved”. 
 
 The collector receives a notification that he has a new route. He should accept (or take a reputation hit reverting the status of the route).  When accepted, the status of the request in the Orderbook changes to “Accepted”. At this point the private data fields, pickupLocation and userId are revealed to the only the collector using public key cryptography. The collector goes along his route and the Tracing Ledger is updated after each pickup using the collector’s digital signature.
 
