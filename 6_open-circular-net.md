@@ -135,7 +135,7 @@ Here is the workflow of how a consumers material is picked up and the collector 
 ![Image](./assets/images/zkSmartRoute.jpg)
 
 
-1. (Consumer) The client wil compute and send the following to the Orderbook:
+1. (Consumer) The client will compute and send the following to the Orderbook:
     - geohash of the pickup location region
     - encrypt the actual location with the users public key
     - compute a maskedGPS, i.e a random GPS location within a few blocks of the real location using differential compute.
