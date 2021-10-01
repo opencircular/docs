@@ -132,6 +132,52 @@ In a zero knowledge smart route we mask the GPS location using a concept called 
 
 ![Image](./assets/images/zkSmartRoute.jpg)
 
+1. (Consumer) The client wil compute and send the following to the Orderbook:
+    - geohash of the pickup location region
+    - encrypt the actual location with the users public key
+    - compute a maskedGPS, i.e a random GPS location within a few blocks of the real location using differential compute.
+    - expiration date of the request (when you want the request picked up by)
+    - pass this data to the "Request Orderbook" smart contract to the specific channel in your region.
+    - financial data
+        - bid or market split
+            - market is average value split paid and computed in region based on what neighbors paid
+            - bid is not garunteed 
+        - requested value split perentage
+        - max fee willing to pay
+2. (Collector) Sends [lat,lng,rad] to the collector pool with his days of availability
+3. Time passes in the round and many pickup requests are gathered in the Orderbook. 
+4. The Oracle is constantly calculating and computing the most effient route each hour based on the following inputs:
+    - How many nodes in the region?
+    - How close is a node to the expiration date?
+    - How many collectors are in the pool for the region?
+    - Are the financial threshholds within range?
+    - What real world event may effect delays?
+        - traffic?
+        - road closures?
+        - weather?
+    - Eventually a MATCH is made for the SMART ROUTE...for example 50 pickups for collector A.
+5. After the match is made the oracle sends out a message to everyone in the route and they can accept of reject (within an expiration date).
+    - The message contains the:
+        - fee amount (if any)
+        - the value split (if any)
+        - the date of the pickup
+        - the public key of the collector
+    - if accept
+        - the client encrypts his gps location to the collectors pubkey (only the collector can decrypt this...not even the oracle or sysadmins on the hyperledger network)
+    - if deny
+        - a deny signal is sent back to the oracle with a reason why (to help the oracle better understand in the future for optimzations)
+6. The oracle waits for X percetnage of the 50 pickup messages to come back
+7. After the rounds meets an expiration date
+    - success threshold
+        - each pickup is added to the route
+        - the smart route is gernetated
+        - the round is ended 
+    - fail threshhold
+        - the oracle waits for more routes to fullfill the request and handles messaging back to the consumer
+8. The smart route is given to the collector with the encrypted pickup locations
+9. The collector accepts the smart route and decrypts all the pickup locations
+    
+
 Further Reading
 ===============
 
