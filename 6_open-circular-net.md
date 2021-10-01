@@ -121,16 +121,19 @@ At the end, each party in the process is awarded Reputation points based on rati
 
 zkSmartRoute - Zero Knowledge Smart Route
 ======================================
-We need to be able to build an accurate smart route without leaking sensative user location data. If you have ever browsed Airbnb for a property to rent you noticed the exact location of the home is not available. It uses an approximate location based on neighborhood for user privacy. 
+We need the ability to build an accurate smart route without leaking sensative user location data issues. In the Airbnb app you can browse for a property to rent but you do not get the exact location of the home. It uses an approximate location based on neighborhood for user privacy. This solves user privacy issues as well as front running (bribing the owner out of band and cutting in line).
 
-In a zero knowledge smart route we mask the GPS location using a concept called "Differential Privacy" and "Secure Multiparty Compute"
+In the zero knowledge smart route protocol we mask the GPS location using a concept called "Differential Privacy" and "Secure Multiparty Compute"
 - "Differential Privacy": Data privacy via noise on large datasets 
     - See [https://www.youtube.com/watch?v=NRf6sUk1bv0](https://www.youtube.com/watch?v=NRf6sUk1bv0){:target="_blank"}  
 - "Secure Multi-Party Compute": Masking private data while still allowing computations. 
     - [https://www.youtube.com/watch?v=l25jcolQW6Q](https://www.youtube.com/watch?v=l25jcolQW6Q){:target="_blank"} (2 min intro) 
     - [https://www.youtube.com/watch?v=P2MmO458xu4](https://www.youtube.com/watch?v=P2MmO458xu4){:target="_blank"} (30 min Boston University Lecture)
 
+Here is the workflow of how a consumers material is picked up and the collector recieves a smart route.
+
 ![Image](./assets/images/zkSmartRoute.jpg)
+
 
 1. (Consumer) The client wil compute and send the following to the Orderbook:
     - geohash of the pickup location region
