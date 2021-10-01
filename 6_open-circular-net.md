@@ -121,7 +121,7 @@ At the end, each party in the process is awarded Reputation points based on rati
 
 zkSmartRoute - Zero Knowledge Smart Route
 ======================================
-We need the ability to build an accurate smart route without leaking sensative user location data issues. In the Airbnb app you can browse for a property to rent but you do not get the exact location of the home. It uses an approximate location based on neighborhood for user privacy. This solves user privacy issues as well as front running (bribing the owner out of band and cutting in line).
+We need the ability to build an accurate smart route without leaking sensative user location data. In the Airbnb app you can browse for a property to rent but you do not get the exact location of the home. It uses an approximate location based on neighborhood for user privacy. This solves user privacy issues as well as front running (bribing the owner out of band and cutting in line).
 
 In the zero knowledge smart route protocol we mask the GPS location using a concept called "Differential Privacy" and "Secure Multiparty Compute"
 - "Differential Privacy": Data privacy via noise on large datasets 
@@ -159,7 +159,7 @@ Here is the workflow of how a consumers material is picked up and the collector 
         - road closures?
         - weather?
     - Eventually a MATCH is made for the SMART ROUTE...for example 50 pickups for collector A.
-5. After the match is made the oracle sends out a message to everyone in the route and they can accept of reject (within an expiration date).
+5. After the match is made the oracle sends out a message to everyone in the route and they can accept or reject (within an expiration date).
     - The message contains the:
         - fee amount (if any)
         - the value split (if any)
@@ -170,7 +170,7 @@ Here is the workflow of how a consumers material is picked up and the collector 
     - if deny
         - a deny signal is sent back to the oracle with a reason why (to help the oracle better understand in the future for optimzations)
 6. The oracle waits for X percetnage of the 50 pickup messages to come back
-7. After the rounds meets an expiration date
+7. After the rounds hits the expiration date
     - success threshold
         - each pickup is added to the route
         - the smart route is gernetated
@@ -178,7 +178,25 @@ Here is the workflow of how a consumers material is picked up and the collector 
     - fail threshhold
         - the oracle waits for more routes to fullfill the request and handles messaging back to the consumer
 8. The smart route is given to the collector with the encrypted pickup locations
-9. The collector accepts the smart route and decrypts all the pickup locations
+9. The collector accepts the smart route and decrypts all the pickup locations. He can go ahead and communicate with the collectors out of band and collect within the SLA. He taps into the reputation system. 
+
+zkReputationSystem
+==================
+We need a system to rank the quailty of collectors without revealing personal data. We need non-objective indicators.
+
+- Hashed Public Key
+- How old is the public key?
+- Non-objective indicators
+    - has collector picked up the materials?
+    - did the item arrive at the drop center?
+    - was money exchanged?
+    - how many routes has the collector completed total?
+    - days worked streak?
+        - are you a casual collector?
+        - do you collect often?
+    - fee rates
+        - do you charge too much?
+
     
 
 Further Reading
