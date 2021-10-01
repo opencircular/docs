@@ -97,7 +97,8 @@ The offer is pending until the “Smart Route Protocol” adds it to a route. Th
 
 **Data Privacy**
 How do we aggreate GPS locations into a route if the data is encrypted?
-1. We could use a feature in Hyperledger Fabric called "Private Collections" to encrypt the GPS data in the channel to only the Oracle. The Oracle could be setup as a separate organization on the channel. The Oracle would be the only organization that would decrypt the data and create the smart route.
+**Front Running** How do we prevent front running to prevent a bad peer from stealing a pickup request before the round is complete?
+1. We could use a feature in Hyperledger Fabric called "Private Collections" to encrypt the GPS data in the channel to only the Oracle. The Oracle could be setup as a separate organization on the channel. The Oracle would be the only organization that would decrypt the data and create the smart route. The only downside to this approach is somebody would have to hold the key to the Oracle organization.
 2. We could use homomorphic encryption to calculate the encrypted distance between encrypted GPS locations and get the encrypted answer. *More research
 
 If an expiration date on a request is met the user can pay the market fee to make it into the next round, or simply wait to see if the request is fulfilled in the subsequent round. 
@@ -118,7 +119,18 @@ Rewards are given based on the pre-agreed upon Collector fee chart. The token ba
 
 At the end, each party in the process is awarded Reputation points based on rating and computed fields, like route completions.
 
+zkSmartRoute - Zero Knowledge Smart Route
+======================================
+We need to be able to build an accurate smart route without leaking sensative user location data. If you have ever browsed Airbnb for a property to rent you noticed the exact location of the home is not available. It uses an approximate location based on neighborhood for user privacy. 
 
+In a zero knowledge smart route we mask the GPS location using a concept called "Differential Privacy" and "Secure Multiparty Compute"
+- "Differential Privacy": Data privacy via noise on large datasets 
+    - See [https://www.youtube.com/watch?v=NRf6sUk1bv0](https://www.youtube.com/watch?v=NRf6sUk1bv0){:target="_blank"}  
+- "Secure Multi-Party Compute": Masking private data while still allowing computations. 
+    - [https://www.youtube.com/watch?v=l25jcolQW6Q](https://www.youtube.com/watch?v=l25jcolQW6Q){:target="_blank"} (2 min intro) 
+    - [https://www.youtube.com/watch?v=P2MmO458xu4](https://www.youtube.com/watch?v=P2MmO458xu4){:target="_blank"} (30 min Boston University Lecture)
+
+![Image](./assets/images/zkSmartRoute.jpg)
 
 Further Reading
 ===============
