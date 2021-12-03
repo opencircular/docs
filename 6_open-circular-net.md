@@ -36,6 +36,10 @@ Smart Route Matchmaking Protocol
 The Smart Route Matching making Protocol is the most important component on the network. Here we can get into the details of the smart contracts we started to talk about above. The protocol consists of a few smart contracts, a matchmaking engine, and a distributed ledger to make sure routes are fairly created and distributed to collectors on the network. The routes must be efficient and economical. The routes cannot be created by one central party to enforce a fair open system without bias. The only way to achieve this with an open non-custodial market. 
 The figure below shows a high-level step by step process flow of the protocol:
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wmatfaX1mHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ![Image](./assets/images/smart-route.png)
 
 Components of the Smart Route Matchmaking Protocol
