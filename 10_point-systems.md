@@ -8,6 +8,9 @@ has_children: false
 
 Background on Point Systems (Dividends vs Loyalty Rewards Points)
 ---------------------------
+
+WIP
+
 Many systems have dividends or rewards systems to incentivise certain consumer behavior.
 
 Citicard has a dividend that incentivises users to use their credit card over competitors cards. Users typically get 1-5% percent cash back on purchases made. Then after a certain amount of time when they hit a threshhold, let say $300, they can request a check. The hidden reason is citi wants more customers, more customers means more profit from two sources (1) from users that hold a balance and paying interest rates (2) from fees harvested from the visa/mastercard network. At the end of the day the consumer ends up footing the bill. They are tricked into thinking they got a free lunch (via the dividend) when in reality the fee is passed back them in the price of consumer goods from retailers and businesses that have to may a fee to use the network. 

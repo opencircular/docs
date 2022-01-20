@@ -10,25 +10,26 @@ Monitoring
 ====================
 
 Tools
------s
+-----
 - Standard Log Out in Kubernetes
 - Grafana Cloud Dashboard
 - Loki and Prometheus
 
 Architecture
 -------------
-![Image](./assets/images/MonitoringDiagram.jpg)
+![Image](./assets/images/MonitoringDiagram.png)
 
 
 Grafana Dashboard Url
 -----------------------
-https://plasticoinapp.grafana.net/d/fU-WBSqWz/plastidash?orgId=1&refresh=10s 
+[https://plasticoinapp.grafana.net/d/fU-WBSqWz/plastidash?orgId=1&refresh=10s](https://plasticoinapp.grafana.net/d/fU-WBSqWz/plastidash?orgId=1&refresh=10s)
 ![Image](./assets/images/GrafanaDashboard.jpg)
 
 Docs
 -------
 https://grafana.com/go/webinar/guide-grafana-cloud-exploring-kubernetes-metrics-and-logs/ 
 
+Install agent
 
 1. Kubernetes Integration install via https://plasticoinapp.grafana.net/a/grafana-easystart-app/?page=integrations-management 
 2. Configure 
