@@ -207,6 +207,11 @@ We need a system to rank the quailty of collectors without revealing personal da
 - tbDEX - Decentralized Identity and Verificable Credentials https://tbdex.io/whitepaper.pdf 
 - Ion - Verifiable Credential and DID open data network incubated at Microsoft https://identity.foundation/ion/
 
+zkOrderbook
+===========
+![Image](./assets/images/zkOrderbook.jpg)
+
+
 Further Reading
 ===============
 

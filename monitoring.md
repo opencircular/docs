@@ -9,9 +9,24 @@ has_children: false
 Monitoring
 ====================
 
-- Grafana Dashboard https://plasticoinapp.grafana.net/d/fU-WBSqWz/plastidash?orgId=1&refresh=10s 
+Tools
+-----s
+- Standard Log Out in Kubernetes
+- Grafana Cloud Dashboard
+- Loki and Prometheus
+
+Architecture
+-------------
+![Image](./assets/images/MonitoringDiagram.jpg)
 
 
+Grafana Dashboard Url
+-----------------------
+https://plasticoinapp.grafana.net/d/fU-WBSqWz/plastidash?orgId=1&refresh=10s 
+![Image](./assets/images/GrafanaDashboard.jpg)
+
+Docs
+-------
 https://grafana.com/go/webinar/guide-grafana-cloud-exploring-kubernetes-metrics-and-logs/ 
 
 
@@ -37,8 +52,6 @@ https://www.youtube.com/watch?v=GdgX46KwKqo
 count_over_time(({app="node"} |= "Gateway ready")[60s])
 ```
 
-Grafana
-=======
 
 Alerting
 --------
