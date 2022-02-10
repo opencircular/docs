@@ -22,6 +22,6 @@ You can find the source code for Jekyll at GitHub:
 Links
 =====
 
-- Code https://github.com/opencircular/opencircular 
-- Scrum Board https://dev.azure.com/opencircular/plasticoin 
-- Website https://plastipoint.com/ 
+- Code <a href="https://github.com/opencircular/opencircular" target="_blank">https://github.com/opencircular/opencircular</a>
+- Scrum Board <a href="https://dev.azure.com/opencircular/plasticoin" target="_blank">https://dev.azure.com/opencircular/plasticoin</a> 
+- Website <a href="https://plastipoint.com" target="_blank">https://plastipoint.com</a>
