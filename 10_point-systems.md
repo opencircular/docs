@@ -52,3 +52,23 @@ Subsidites are temporary and should HOPEFULLY only be used to bootstrap
 The Goal
 --------
 The goal is to create a global effiecient system and incentivise competition to drive the value of the material up (used in more products) and drive the cost of labor to produce and transport the material down. The goal is to not even use reward tokens or subsidies and make the value split of the material pay for itself.
+
+
+<script type="text/javascript"
+  src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js">
+</script>
+<script>
+$(document).ready(function() {
+    mermaid.initialize({
+        theme: 'forest'
+    });
+});
+</script>
+
+<div class="mermaid">
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
