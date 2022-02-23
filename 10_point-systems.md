@@ -9,14 +9,14 @@ has_children: false
 <script type="text/javascript" src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 <script>$(document).ready(function() {mermaid.initialize({theme: 'forest'});});</script>
 
-PlastiPoint System Design
+Point System Design
 ================================
 The PlastiPoint system can be thought of as a "Non-Fungible" point reward system built upon a gamification framework of services. The three main components are:
-1. Chart of Weights to Point Conversions
+1. Chart of Weight to Point Conversions
 2. Chart of Services and Costs
 3. Redemption Chart of Points to Rewards
 
-There are many external forces on the system including: demographics, regionality, market forces and reward liquidity. Before we dive more in depth on how the system worksd lets first examine some popular point systems that exist today.
+There are many external forces on the system including: demographics, regionality, market forces and reward liquidity. Before we dive more in depth on how the system works lets first examine some popular point systems that exist today.
 
 
 Background on Point Systems 
