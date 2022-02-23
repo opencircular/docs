@@ -177,10 +177,28 @@ Buying rewards in build at a discoutned rate could help bootstrap the rewards sy
 - In time, game theory suggests the value of the material will increase making the system less and less dependent upon reward sponsors and more 
 incentives could come from the "material value split".
 
+
+Q: Why would a company, like Coke, want to become a rewards sponsor? 
+--------------------
+1. `To meet sustainability goals`
+Each point in the system represents weight in KG of material being recycled and taken out of the environment.
+The PlastiPoint is proof of recyling...in other words its a certificate. I dislike the word credit. Carbon Credits are often time greenwashing scams and they are
+hard to prove any good was actaully done. The PlastiPoint is physcial proof that can be audited to prove something was actaully recycled.
+With these proofs in place a company could use that for meeting their sustainabilty goals.
+2. `To market a new product`
+The app will eventually have a large user base which will make a great marketing platfrom to promote new products.
+3. `To drive complementary purchases`
+If a user walks into a Total convenience store with a coupon to buy Coke they might also make complementary services at the store. 
+
+Revenue Opportunites
+------------------------------
+As the user base grows the revenue opportunies grow. There will be more sponsors coming on board to sell ads to or bump their product up for 
+premium "billboard" space in the rewards store.
+
 The Goal
 --------
-The goal is to create a global effiecient system and incentivise competition to drive the value of the material up (used in more products) 
-and drive the cost of labor to produce and transport the material down. A good goal to shoot towards is to not even use rewards or subsidies and make 
+The goal is to create a global efficient system and incentivise competition to drive the value of the material up (used in more products) 
+and drive down the cost of labor and the cost to produce/transport the material. A good goal to shoot towards is to not even use rewards or subsidies and make 
 the value split of the material pay for the service iteself...creating a self-sustaining system.
 
 
