@@ -157,7 +157,7 @@ https://yukaichou.com/gamification-examples/octalysis-complete-gamification-fram
 (3) Redemption Chart of Points to Rewards
 ------------------------------------------
 
-|   Points    |   Reward                                  | Reward Sponsor      | Redeembale Location |  Date    | 
+|   Points    |   Reward                                  | Reward Sponsor      | Redeemable Location |  Date    | 
 | ----------- | ----------------------------------------- | ------------------  |  ------------------ | -------- | 
 |     1000    |   50 KSH discount on Coke at Total        |   Coke              |       Nairobi       |  2/22/22 | 
 |     800     |   50 minutes of Safaricom Talk/MSG/ect... |   System - bulk buy | Nairobi             |  2/22/22 | 
