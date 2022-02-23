@@ -9,9 +9,14 @@ has_children: false
 <script type="text/javascript" src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 <script>$(document).ready(function() {mermaid.initialize({theme: 'forest'});});</script>
 
-PlastiPoint Gamification System
+PlastiPoint System Design
 ================================
-The PlastiPoint can be thought of as a "Non-Fungible" reward system built upon a gamification framework. Demographics, regionality, 
+The PlastiPoint system can be thought of as a "Non-Fungible" point reward system built upon a gamification framework of services. The three main components are:
+1. Chart of Weights to Point Conversions
+2. Chart of Services and Costs
+3. Redemption Chart of Points to Rewards
+
+Demographics, regionality, 
 market forces and reward liquitity all effect the system. More on the explaination of this below but first lets examine some popular 
 point systems that exist today.
 
@@ -70,11 +75,11 @@ Non-Fungible Token
 ------------------
 - Example - A token representing something physical (digital twin)
 - Example - A collectible like a baseball card
-- It's hard to put a global agreeable value on the unit, the value dervices from the the eye of the beholder.
+- Typically has transferable value associated to the transaction
+- Typically it's hard to put a global agreeable value on the unit, the value derives from the the eye of the beholder.
 - Programmable
-- Transferrable
 - Can add metadata to the token, such as GPS location or date aquired
-- Certificable - can prove its recycled
+- Certifiable - can prove its recycled
 - Traceable - can trace from consumer to recyling center to reuser etc...
 
 The PlastiPoint 
@@ -92,69 +97,91 @@ The idea is to split the point system into three logical charts:
 The system is not just a simple static point to cash exchange rate. It depends heavily on consumer demographic, core drives, 
 cost to move the material, and market value of the material (which changes daily).
 
-1. Chart of Weight to Points
-- |  KG   |  Points |
-  | ----- | ------- |
-  |   1   |   100   |
-  |   2   |   200   |
-  |  ..   |   ...   |
-  |  10   |  1000   |
+(1) Chart of Weight to Point Conversions
+-----------------------------------------
+
+|  KG   |  Points |
+| ----- | ------- |
+|   1   |   100   |
+|   2   |   200   |
+|  ..   |   ...   |
+|  10   |  1000   |
+
 - The chart above represents the "PlastiPoint Standard". It's a global standard that pegs the weight in kilograms to how many points 
 are rewarded to a consumer for recycling. This chart is system wide and should never change.
 - I propose we use the the conversion above (1KG = 100 Points). In the future somebody might invent a machine that allows a consumer to take back
-one lightweight flexible packagaing materiak (let's say a plastic wrap for a food item). The item might only weight 1 gram. We simply do the math and award the user 0.1 points. 
+one lightweight flexible packagaing material, for example, a plastic wrap from a food item. The item might only weight 1 gram. We simply do the math and award the user 0.1 points. 
 
-2. Chart of Services and Costs
-    
-    - | Demographic     | Incentive     |       Service                  |      KG     | Points Earned |   Subsidy Paid to Consumer    |  Amount Owed  |  Material Value Split % Paid 2 Consumer | Premium Features        
-      | --------------- | ------------- | ------------------------------ |  ---------  | ------------- | ----------------------------- | ------------- | --------------------------------------  | ----------------------------------------
-      |  High Income    | convenience   |     Residential Pickup (Paid)  |      1      |     10        |      0                         |  300 KSH      |     0%                                  | On Demand Pickup in AM or PM 
-      |  High Income    | convenience   |     Residential Pickup (Paid)  |      2      |     20        |      0                         |  350 KSH      |     0%                                  | On Demand Pickup in AM or PM 
-      |  Medium Income  | convenience   |     Residential Pickup (Free)  |      1      |     10        |      0                         |    0 KSH      |     0%                                  | Flexible Pickup whenever an efficient route is available
-      |  Low Income     | reward        |     Drop Off                   |      1      |     10        |     100 KSH                    |    0 KSH      |     5%                                  | N/A
-    
-    - The chart above shows specially crafted services for different demographics. There are many different types of users in the system with different desires driving their actions. 
-    Lets take, for example, the three types of consumers: High Income Consumer, Low Income Consumer and Medium Income consumer. The high income consumer may 
-    be willing to pay 300 shillings to a collector for a residential pickup. This is based on a convenience factor, which can be thought of 
-    as a premium feature.  In return, they may want to document this act of goodwill. We could in return give them a certain amount of points 
-    in return for the effort (they could possibly donate the reward). Lets assume the following "Chart of Services and Costs":
-    
-    - The goal is to split the demographic and figure out what the minimum amount of reward is to drive recycling behaviors. The 
-    complexity above can be hidden in the app. As time goes on and we build out the network we may be able to offer free residential 
-    pickups. I think this goal ought to be thought more of as a means of gamification and not to get stuck on the details of 
-    exchange rates (at the consumer level). 
-    
-    - In regards to raising funds for the subsities for the low income services we can look into a really popular Gamification review the Octalysis framework.
-    This framework is used by all major tech companies from Uber to Google. In "big tech" some services appear to be free but they have different business models
-    backing them. 
-    https://yukaichou.com/gamification-examples/octalysis-complete-gamification-framework/ 
+(2) Chart of Services and Costs
+----------------------------------
+
+|       Service                  |      Cost     | Demographic     | Incentive     |    KG    | Points Earned  |   Subsidy Paid to Consumer     |  Material Value Split % Paid 2 Consumer | Premium Features        
+| ------------------------------ | ------------- | --------------- | ------------- | -------- | -------------- | ------------------------------ | --------------------------------------  | ----------------------------------------
+|     Residential Pickup (Paid)  |  300 KSH      |  High Income    | convenience   |     1    |     100        |      0                         |     0%                                  | On Demand Pickup in AM or PM 
+|     Residential Pickup (Paid)  |  350 KSH      |  High Income    | convenience   |     2    |     200        |      0                         |     0%                                  | On Demand Pickup in AM or PM 
+|     Residential Pickup (Free)  |    0 KSH      |  Medium Income  | convenience   |     1    |     100        |      0                         |     0%                                  | Flexible Pickup whenever an efficient route is available
+|     Drop Off (Subsidized)      |    0 KSH      |  Low Income     | point reward/cash |  1   |     100        |     100 KSH                    |     5%                                  | N/A
+|     Drop Off (Unsubsidized)    |    0 KSH      |  Medium Income  | point reward   |     1   |     100        |      0                         |     7%                                  | N/A
+
+- <i>values above are dynamic except "KG to Points" are not</i>
+
+- `Services` typically target different demographics and offer different `premium features` 
+    - Residential Pickup (Paid): On Demand Pickup in AM or PM 
+    - Residential Pickup (Free): Flexible Pickup whenever an efficient route is available
+    - Drop Off: get paid   
+
+- `Demographics `The chart above shows specially crafted services for different demographics. 
+There are many different types of users in the system with different desires driving their actions. 
+Lets take, for example, the three types of consumers: High Income Consumer, Low Income Consumer and Medium Income consumer. The high income consumer may 
+be willing to pay 300 shillings to a collector for a residential pickup. This is based on a convenience factor, which can be thought of 
+as a premium feature.  In return, they may want to document this act of goodwill. We could in return give them a certain amount of points 
+in return for the effort (they could possibly donate the reward). 
+
+- `Incentives` The goal is to split the demographic and figure out what the minimum amount of reward is to drive recycling behaviors. The 
+complexity above can be hidden in the app. As time goes on and we build out the network we may be able to offer free residential 
+pickups. I think this goal ought to be thought more of as a means of gamification and not to get stuck on the details of 
+exchange rates (at the consumer level). 
+
+- `Subsidies` Some demographics will need to be paid to recycle, specifically the `drop off` service targeting the low income demographic. 
+This could be in the form of donations from sponsors, governments, or possibly a dividend cut from the local recycling center.
+
+- `Material Split` When a consumer drops off recycling at a center they could get a percentage of the value. This will be based on
+many market factors as well as how efficient the local recycling system is. I suspect at first the split for the consumer will be 0% but in 
+time as the recycling supply chain becomes more effiecnet and the value of the material increases the material split could increase and consumers
+could get paid to recycle!
+
+- `Gamification` all the factors above can be addressed by a gamification framework. A framework called the "Octalysis framework"
+is used by all major tech companies from Uber to Google. In "big tech" some services appear to be free but they have different business models backing them. 
+https://yukaichou.com/gamification-examples/octalysis-complete-gamification-framework/ 
  
-3. Points to Rewards Exchange
-    - When you want to exchange your points for rewards there are several determining factors that effect the exchange rate. 
-        1. The value of the material at that point in time.
-        2. How many rewards are in the system (Reward Liquidity)
-        3. Your physical location. 
-    - The factors above mean the exchange rates are dynamic.
-    - Exchaning points for rewards can be location specific. For example, coupons may only be redeemable in certain cities and states.
-    Since each point is a "non fungible token" we can enforce location based contraints (geofence) becuase we save metadata about location with each point.
-    - Rewards are for both high income demographics and low income. High income earner may choose donation based rewards over products.
-    - A example exchange chart could look like this:
-    - |  Location  |     Date     |   Points    |   Reward                                  | Reward Sponsor
-      | ---------- | -----------  | ----------- | ----------------------------------------- | --------------
-      | Nairobi    |      2/22/22 |     1000    |   50 shillings discount on Coke at Total  |   Coke
-      | Nairobi    |      2/22/22 |     800     |   50 minutes of Safaricom Talk/MSG/ect... |   System (buying in bulk - see https://africastalking.com/airtime)
-      | Nairobi    |      2/22/22 |     500     |   Give as gift to collector/friend/etc... |   System txn
-    - To successfully bootstrap the program we need to work and build a network of reward sponsors and integrate into existing coupon/discount/gift card/point-of-sale systems.
-    - We also need to make sure we maintain a healthy pool of rewards to keep consumers engaged. Possibly, in low reward liquidity times, we could resort to digital rewards and games.
-    - In time, game theory suggests the value of the material will increase making the system less and less dependent upon reward sponsors and more 
-    funding could come from "material value split".
+(3) Redemption Chart of Points to Rewards
+------------------------------------------
 
+|   Points    |   Reward                                  | Reward Sponsor      | Redeembale Location |  Date    | 
+| ----------- | ----------------------------------------- | ------------------  |  ------------------ | -------- | 
+|     1000    |   50 KSH discount on Coke at Total        |   Coke              |       Nairobi       |  2/22/22 | 
+|     800     |   50 minutes of Safaricom Talk/MSG/ect... |   System - bulk buy | Nairobi             |  2/22/22 | 
+|     500     |   Give as gift to collector/friend/etc... |   System - transfer | Nairobi             |  2/22/22 | 
+
+- When you want to exchange your points for rewards there are several determining factors that effect the exchange rate. 
+    1. The value of the material at that point in time.
+    2. How many rewards are in the system (Reward Liquidity)
+    3. Your physical location. 
+- The factors above mean the exchange rates are dynamic.
+- Exchaning points for rewards can be location specific. For example, coupons may only be redeemable in certain cities and states.
+Since each point is a "non fungible token" we can enforce location based contraints (geofence) becuase we save metadata about location with each point.
+- Rewards are for both high income demographics and low income. High income earner may choose donation based rewards over products.
+- To successfully bootstrap the rewards program we need to build a network of reward sponsors and integrate into existing systems like, coupon/discount/gift card/point-of-sale systems.
+Buying rewards in build at a discoutned rate could help bootstrap the rewards system, see https://africastalking.com/airtime
+- We also need to make sure we maintain a healthy pool of rewards to keep consumers engaged. Possibly, in low reward liquidity times, we could resort to digital rewards and games.
+- In time, game theory suggests the value of the material will increase making the system less and less dependent upon reward sponsors and more 
+incentives could come from the "material value split".
 
 The Goal
 --------
 The goal is to create a global effiecient system and incentivise competition to drive the value of the material up (used in more products) 
-and drive the cost of labor to produce and transport the material down. A good goal to shoot towards is to not even use reward or subsidies and make 
-the value split of the material pay for the service iteself.
+and drive the cost of labor to produce and transport the material down. A good goal to shoot towards is to not even use rewards or subsidies and make 
+the value split of the material pay for the service iteself...creating a self-sustaining system.
 
 
 <div class="mermaid">
