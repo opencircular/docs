@@ -16,15 +16,13 @@ The PlastiPoint system can be thought of as a "Non-Fungible" point reward system
 2. Chart of Services and Costs
 3. Redemption Chart of Points to Rewards
 
-Demographics, regionality, 
-market forces and reward liquitity all effect the system. More on the explaination of this below but first lets examine some popular 
-point systems that exist today.
+There are many external forces on the system including: demographics, regionality, market forces and reward liquidity. Before we dive more in depth on how the system worksd lets first examine some popular point systems that exist today.
 
 
 Background on Point Systems 
 ---------------------------
 
-Many point system exists today including: 
+Many point systems exist today including: 
 -  Credit Card dividends
 -  Airline loyalty points
 -  Grocery store cards (or entering  a phone number at checkout)
@@ -33,69 +31,66 @@ Many point system exists today including:
 <div class="mermaid">
 graph TD;
     Coupon;
-    AirlineMiles;
+    Airline-Miles;
     Dividends;
 </div>
 
 These are all examples of different point systems.
 
-This video does a good job explaining the complexaties of a point system....sometimes even morphing a companies traditional business 
-model away from the core service and acting more as a sudo-bank or finance company. Watch: How Airlines Quietly Became Banks 
-<a href="https://www.youtube.com/watch?v=ggUduBmvQ_4" target="_blank">https://www.youtube.com/watch?v=ggUduBmvQ_4</a>
+Point systems can get complex, sometimes even morphing a companies traditional business 
+model away from the core service they offer and making them act more as a sudo-bank or finance company. This video does a good job explaining the complexaties of a point system: "How Airlines Quietly Became Banks" <a href="https://www.youtube.com/watch?v=ggUduBmvQ_4" target="_blank">https://www.youtube.com/watch?v=ggUduBmvQ_4</a>
 
 **Dividends**
-Many systems have dividends or rewards systems to incentivise certain consumer behavior. Citicard has a dividend that incentivises 
+Many systems include dividends to incentivise certain consumer behavior. Citicard has a dividend that incentivises 
 users to use their credit card over competitors cards. Users typically get 1-5% percent cash back on purchases made. Then after a 
-certain amount of time when they hit a threshhold, let say $300, they can request a check. The hidden reason is citi wants more customers, 
-more customers means more profit from two sources (1) from users that hold a balance and paying interest rates (2) from fees harvested 
+certain amount of time when they hit a threshhold, let say $300, they can request a check. The hidden reason is Citi wants more customers. 
+More customers means more profit from two sources (1) from users that hold a balance and paying interest rates (2) from fees harvested 
 from the visa/mastercard network. At the end of the day the consumer ends up footing the bill. They are tricked into thinking they got 
 a free lunch (via the dividend) when in reality the fee is passed back them in the price of consumer goods from retailers and businesses 
 that have to pay a fee to use the network. 
 
 
 **Airline Miles**
-Airlines have a miles rewards system. Typically the incentive is for you to exclusivley fly a certain airline to earn loyalty points and 
+Airlines have a miles reward system. Typically the incentive is for you to exclusivley fly a certain airline to earn loyalty points and 
 bundle with a car rental and credit card company. The consumer may think they are racking up points and getting free vacations but most 
 of the time they are choosing slightly more expensive flights throughout the year to earn the points (probably because their employer 
-is footing the bill). These points are not tranferable between airlines and lock the consumer into one vendor.
+is footing the bill). These points are not tranferable between airlines and lock the consumer into one vendor. In recent times, many of the large
+airlines have had their reward systems valued higher than the core business on the stock exchange. 
 
-The PlastiPoint reward system is slightly differnet and the devil is in the details. 
+The PlastiPoint reward system is slightly different. The devil is in the details. 
 
 To get into the details we must define two finance terms (1) fungible tokens and (2) non-fungible tokens. 
-These are fancy words for different types of "Points".
+These are just fancy words for different types of "Points".
 
 Fungible Token
 ----------------
-- Example - Currency
-- Every unit is worth that same value
-- Easily divided and divisible. 1 dollar can be split into (4) 25 cent quarters
+- Example: Currency
+- Every unit is worth the same value
+- Easily divisible. 1 dollar can be split into (4) 25 cent quarters
 - Tranferrable
 
 Non-Fungible Token
 ------------------
-- Example - A token representing something physical (digital twin)
-- Example - A collectible like a baseball card
-- Typically has transferable value associated to the transaction
-- Typically it's hard to put a global agreeable value on the unit, the value derives from the the eye of the beholder.
+- Example: A token representing something physical (digital twin)
+- Example: A collectible like a baseball card
+- Transferable value associated to the transaction
+- Typically it's hard to put a global value on the unit. The value derives from the the eye of the beholder or system
 - Programmable
 - Can add metadata to the token, such as GPS location or date aquired
-- Certifiable - can prove its recycled
-- Traceable - can trace from consumer to recyling center to reuser etc...
+- Certifiable: can prove its recycled
+- Traceable: can trace from consumer to recyling center to reuser etc...
 
 The PlastiPoint 
 -----------------
-The PlastiPoint is a non fungible point and reward system built upon a gamification framework. Demographics, regionality,
-market forces and reward liquitity all effect the system.
+The PlastiPoint is a non fungible point and reward system built upon a gamification framework. Demographics, regionality, market forces and reward liquidity effect the system. The system is much more complicated than a simple static point to cash exchange rate. It depends heavily on consumer core drives, cost to move the material, and the market value of the material (which changes daily).
 
 The idea
 --------
-The idea is to split the point system into three logical charts: 
-- (1) Chart of Weight to Points
+The big idea is to split the point system into three logical charts: 
+- (1) Chart of Weight to Point Conversion
 - (2) Chart of Services and Costs 
-- (3) Chart of Points to Reward (Exchange)
+- (3) Chart of Points to Reward (Redemption/Exchange)
 
-The system is not just a simple static point to cash exchange rate. It depends heavily on consumer demographic, core drives, 
-cost to move the material, and market value of the material (which changes daily).
 
 (1) Chart of Weight to Point Conversions
 -----------------------------------------
@@ -109,8 +104,7 @@ cost to move the material, and market value of the material (which changes daily
 
 - The chart above represents the "PlastiPoint Standard". It's a global standard that pegs the weight in kilograms to how many points 
 are rewarded to a consumer for recycling. This chart is system wide and should never change.
-- I propose we use the the conversion above (1KG = 100 Points). In the future somebody might invent a machine that allows a consumer to take back
-one lightweight flexible packagaing material, for example, a plastic wrap from a food item. The item might only weight 1 gram. We simply do the math and award the user 0.1 points. 
+- I propose we use the the conversion above (1KG = 100 Points). In the future somebody might invent a machine that allows a consumer to take back a single lightweight flexible packaging material, for example, a plastic wrap from a food item. The item might only weigh 1 gram. We simply do the math and award the user 0.1 points. 
 
 (2) Chart of Services and Costs
 ----------------------------------
@@ -123,34 +117,34 @@ one lightweight flexible packagaing material, for example, a plastic wrap from a
 |     Drop Off (Subsidized)      |    0 KSH      |  Low Income     | point reward/cash |  1   |     100        |     100 KSH                    |     5%                                  | N/A
 |     Drop Off (Unsubsidized)    |    0 KSH      |  Medium Income  | point reward   |     1   |     100        |      0                         |     7%                                  | N/A
 
-- <i>values above are dynamic except "KG to Points" are not</i>
+- <i>Most of the values above are dynamic...except "KG to Points"</i>
 
-- `Services` typically target different demographics and offer different `premium features` 
-    - Residential Pickup (Paid): On Demand Pickup in AM or PM 
-    - Residential Pickup (Free): Flexible Pickup whenever an efficient route is available
-    - Drop Off: get paid   
+- `Services` 
+    - The "Residential Pickup (Paid)" service offers a premium "On Demand Pickup" feature
+    - The "Residential Pickup (Free)" service offers a non time sensative pickup window
+    - the "Drop off" service offers the consumer getting a reward/paid   
 
-- `Demographics `The chart above shows specially crafted services for different demographics. 
+- `Demographics` The chart above shows specially crafted services for different demographics. 
 There are many different types of users in the system with different desires driving their actions. 
 Lets take, for example, the three types of consumers: High Income Consumer, Low Income Consumer and Medium Income consumer. The high income consumer may 
 be willing to pay 300 shillings to a collector for a residential pickup. This is based on a convenience factor, which can be thought of 
 as a premium feature.  In return, they may want to document this act of goodwill. We could in return give them a certain amount of points 
 in return for the effort (they could possibly donate the reward). 
 
-- `Incentives` The goal is to split the demographic and figure out what the minimum amount of reward is to drive recycling behaviors. The 
+- `Incentives` The goal is to figure out what the minimum reward is to drive recycling behaviors. The 
 complexity above can be hidden in the app. As time goes on and we build out the network we may be able to offer free residential 
-pickups. I think this goal ought to be thought more of as a means of gamification and not to get stuck on the details of 
+pickups. I think this goal ought to be thought more of as a means of gamification and avoid getting stuck with details of 
 exchange rates (at the consumer level). 
 
 - `Subsidies` Some demographics will need to be paid to recycle, specifically the `drop off` service targeting the low income demographic. 
 This could be in the form of donations from sponsors, governments, or possibly a dividend cut from the local recycling center.
 
 - `Material Split` When a consumer drops off recycling at a center they could get a percentage of the value. This will be based on
-many market factors as well as how efficient the local recycling system is. I suspect at first the split for the consumer will be 0% but in 
+many market factors, as well as how efficient the local recycling system is. I suspect at first the split for the consumer will be 0% but in 
 time as the recycling supply chain becomes more effiecnet and the value of the material increases the material split could increase and consumers
 could get paid to recycle!
 
-- `Gamification` all the factors above can be addressed by a gamification framework. A framework called the "Octalysis framework"
+- `Gamification` All the factors above can be addressed by a gamification framework. A framework called the "Octalysis framework"
 is used by all major tech companies from Uber to Google. In "big tech" some services appear to be free but they have different business models backing them. 
 https://yukaichou.com/gamification-examples/octalysis-complete-gamification-framework/ 
  
@@ -199,7 +193,7 @@ The Goal
 --------
 The goal is to create a global efficient system and incentivise competition to drive the value of the material up (used in more products) 
 and drive down the cost of labor and the cost to produce/transport the material. A good goal to shoot towards is to not even use rewards or subsidies and make 
-the value split of the material pay for the service iteself...creating a self-sustaining system.
+the value split of the material pay for the service itself...creating a self-sustaining system.
 
 
 <div class="mermaid">
