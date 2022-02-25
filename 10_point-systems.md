@@ -146,7 +146,7 @@ could get paid to recycle!
 
 - `Gamification` All the factors above can be addressed by a gamification framework. A framework called the "Octalysis framework"
 is used by all major tech companies from Uber to Google. In "big tech" some services appear to be free but they have different business models backing them. 
-https://yukaichou.com/gamification-examples/octalysis-complete-gamification-framework/ 
+<a href="https://yukaichou.com/gamification-examples/octalysis-complete-gamification-framework/" target="_blank">https://yukaichou.com/gamification-examples/octalysis-complete-gamification-framework/</a>
  
 (3) Redemption Chart of Points to Rewards
 ------------------------------------------
@@ -166,7 +166,7 @@ https://yukaichou.com/gamification-examples/octalysis-complete-gamification-fram
 Since each point is a "non fungible token" we can enforce location based contraints (geofence) becuase we save metadata about location with each point.
 - Rewards are for both high income demographics and low income. High income earner may choose donation based rewards over products.
 - To successfully bootstrap the rewards program we need to build a network of reward sponsors and integrate into existing systems like, coupon/discount/gift card/point-of-sale systems.
-Buying rewards in build at a discoutned rate could help bootstrap the rewards system, see https://africastalking.com/airtime
+Buying rewards in bulk at a discounted rate could help bootstrap the rewards system, see https://africastalking.com/airtime
 - We also need to make sure we maintain a healthy pool of rewards to keep consumers engaged. Possibly, in low reward liquidity times, we could resort to digital rewards and games.
 - In time, game theory suggests the value of the material will increase making the system less and less dependent upon reward sponsors and more 
 incentives could come from the "material value split".
@@ -176,9 +176,7 @@ Q: Why would a company, like Coke, want to become a rewards sponsor?
 --------------------
 1. `To meet sustainability goals`
 Each point in the system represents weight in KG of material being recycled and taken out of the environment.
-The PlastiPoint is proof of recyling...in other words its a certificate. I dislike the word credit. Carbon Credits are often time greenwashing scams and they are
-hard to prove any good was actaully done. The PlastiPoint is physcial proof that can be audited to prove something was actaully recycled.
-With these proofs in place a company could use that for meeting their sustainabilty goals.
+The PlastiPoint is proof of recyling...in other words its a certificate. Often times credit systems, such as Carbon Credits are hard to audit and even harder to provide tangible metrics of environmental improvements. Solid objects, like plastic are much easier to provide metrics for. The PlastiPoint is physcial proof that can be audited to prove something was actaully recycled. With these proofs in place a company could use that for meeting their sustainabilty goals.
 2. `To market a new product`
 The app will eventually have a large user base which will make a great marketing platfrom to promote new products.
 3. `To drive complementary purchases`
