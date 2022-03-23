@@ -9,16 +9,16 @@ has_children: false
 <script type="text/javascript" src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 <script>$(document).ready(function() {mermaid.initialize({theme: 'forest'});});</script>
 
-Smart Route Design
+Smart Route Design (GIS System)
 ================================
 
 <img src="./assets/images/Smart_Route_Postgres.png"/>
 
 
 The following technologies are being used:
-- PostGIS - https://postgis.net/ mapping and GIS system built in SQL
-- Open Steet Maps - https://nominatim.openstreetmap.org/ui/search.html - OSM mapping data is imported into SQL. It includes map data, polygons, geographic features like roads and water, and geography/polygon math
-- https://osm2pgsql.org/ - Used to import Open Street Maps data into Postgres for your region (for example a 5GB dataset for Kenya)
+- PostGIS - <a href="https://postgis.net/" target="_blank">https://postgis.net/</a> mapping and GIS system built in SQL
+- Open Steet Maps - <a href="https://nominatim.openstreetmap.org/ui/search.html" target="_blank">https://nominatim.openstreetmap.org/ui/search.html</a> - OSM mapping data is imported into SQL. It includes map data, polygons, geographic features like roads and water, and geography/polygon math
+- <a href="https://osm2pgsql.org/" target="_blank">https://osm2pgsql.org/</a> - Used to import Open Street Maps data into Postgres for your region (for example a 5GB dataset for Kenya)
 
 PlastiPoint Data 
 ---------------
@@ -299,4 +299,4 @@ SET SESSION vars.num_collectors = '10';
 )
 ```
 
-More queries here: [https://github.com/opencircular/opencircular/blob/master/src/blockchain/hyperledger/smartcontract.readme.md#query-something](https://github.com/opencircular/opencircular/blob/master/src/blockchain/hyperledger/smartcontract.readme.md#query-something)
+More queries here: <a href="https://github.com/opencircular/opencircular/blob/master/src/blockchain/hyperledger/smartcontract.readme.md#query-something" target="_blank">https://github.com/opencircular/opencircular/blob/master/src/blockchain/hyperledger/smartcontract.readme.md#query-something</a>
