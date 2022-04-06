@@ -354,6 +354,8 @@ FROM REGION_POINTS
 ```
 This will label each point from 0-9 representing what cluster they belong to.
 <img src='./assets/images/ST_ClusterKMeans_3.png'/>
+The image below is a better visual of points being subdivided into k means clusters (because I dont know how to use different colors for points in pgadmin geometry viewer)
+<img src='./assets/images/ST_KMeans.png'/>
 
 4. Now that we have all the raw data we need to group the points into each of the 10 clusters
 ```sql
