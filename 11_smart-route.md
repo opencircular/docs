@@ -239,7 +239,7 @@ limit 1
 ```
 
 ### Smart Route Query
-*Note, It is a super complicated query. Most of the PostGIS SQL was learned from watching this video https://www.youtube.com/watch?v=g4DgAVCmiDE . This is a basic, unoptimized, Smart Route. The goal is to further optimize it by cross referencing more datasets (like water features, traffic data, etc...).
+*Note, It is a super complicated query. Most of the PostGIS SQL was learned from watching this video <a href='https://www.youtube.com/watch?v=g4DgAVCmiDE' target='_blank'>https://www.youtube.com/watch?v=g4DgAVCmiDE</a> . This is a basic, unoptimized, Smart Route. The goal is to further optimize it by cross referencing more datasets (like water features, traffic data, etc...).
 ```sql
 SET SESSION vars.region = 'Nairobi';
 SET SESSION vars.num_pickups = '100';
@@ -248,16 +248,18 @@ SET SESSION vars.num_collectors = '10';
 (
 	WITH REGION_GEOM as (
 		SELECT name, 
-			osm_id, 
+			osm_id,
+			/* Step 2 - generate Random Points */
 			ST_GeneratePoints(
 				way, 
 				current_setting('vars.num_pickups')::int
 			) as the_geom
 		FROM (
+			/* Step 1 - get the polygon of a region */
 			SELECT name, osm_id, way 
 			FROM planet_osm_polygon 
 			WHERE name = current_setting('vars.region')
-      LIMIT 1
+      		LIMIT 1
 		) as REGIONGEOM
 	),
 
@@ -272,31 +274,156 @@ SET SESSION vars.num_collectors = '10';
 		  ST_Collect(geom) as geom
 		FROM (
 			SELECT geom,
+				/* Step 3 - Cluster using KMeans */
 				ST_ClusterKMeans(
 					geom, 
 					current_setting('vars.num_collectors')::int
 				) OVER () AS kmeans_cid
 			FROM REGION_POINTS
 		) as ROUTECLUSTERS
+		/* Step 4 - Group by cluster id */
 		GROUP BY kmeans_cid
 		ORDER BY kmeans_cid
 	),
 
 	ROUTE_POLYGONS as (
 		SELECT cid, 
+			/* Step 7 - clip the lines to be in bounds */
         	ST_Intersection(
 				ST_VoronoiPolygons(geom), 
 				st_concavehull(geom, .99)::geography
 			) as geom,
+			/* Step 5 - Get Center Point */ 
 			ST_Centroid(geom)::geography as centroid,
+			/* Step 6 - Turn point data into polygons */
 			ST_VoronoiPolygons(geom)::geography as vor
 		FROM ROUTE_CLUSTERS
 	)
 
+	/* Step 8 - Union the points and cluster onto one neat map */
 	SELECT cid, geom::geography FROM ROUTE_CLUSTERS
 	UNION
 	SELECT cid, geom::geography FROM ROUTE_POLYGONS
 )
 ```
+
+Now lets break down the "Smart Route Query" into 8 steps:
+
+1. First, get the polygon of a region like Nairobi
+```sql
+SELECT name, osm_id, way 
+FROM planet_osm_polygon 
+WHERE name = 'Nairobi'
+LIMIT 1
+```
+<img src='./assets/images/ST_REGION_1.png'/>
+
+2. Next lets generate 100 Random Points within the Nairobi region using the PostGIS function ST_GeneratePoints. 
+	- Docs <a href='https://postgis.net/docs/ST_GeneratePoints.html' target='_blank'>https://postgis.net/docs/ST_GeneratePoints.html</a> 
+	- Video <a href="https://youtu.be/g4DgAVCmiDE?t=2432" target="_blank">https://youtu.be/g4DgAVCmiDE?t=2432</a>
+	- SQL
+```sql
+SELECT name, 
+	osm_id, 
+	ST_GeneratePoints(
+		way, 
+		100
+	) as the_geom
+FROM (
+    SELECT name, osm_id, way 
+    FROM planet_osm_polygon 
+    WHERE name = 'Nairobi'
+    LIMIT 1
+) as REGIONGEOM
+```
+<img src='./assets/images/ST_POINTS_2.png'/>
+This makes the REGION_GEOM. You can save this in a temp table. 
+
+3. Next, lets put the points into 10 clusters, representing 10 collector zones. We use the KMeans clustering algo in PostGIS (ST_ClusterKMeans)
+	- Docs <a href='https://postgis.net/docs/ST_ClusterKMeans.html' target='_blank'>https://postgis.net/docs/ST_ClusterKMeans.html</a> 
+	- Video <a href="https://youtu.be/g4DgAVCmiDE?t=2451" target="_blank">https://youtu.be/g4DgAVCmiDE?t=2451</a>
+	- SQL
+```sql
+SELECT 
+	ST_ClusterKMeans(
+		geom, 
+		10
+	) OVER () AS kmeans_cid,
+	geom
+FROM REGION_POINTS
+```
+This will label each point from 0-9 representing what cluster they belong to.
+<img src='./assets/images/ST_ClusterKMeans_3.png'/>
+
+4. Now that we have all the raw data we need to group the points into each of the 10 clusters
+```sql
+SELECT
+	kmeans_cid as cid,
+	ST_Collect(geom) as geom
+FROM (
+	SELECT geom,
+			ST_ClusterKMeans(
+				geom, 
+				current_setting('vars.num_collectors')::int
+			) OVER () AS kmeans_cid
+	FROM REGION_POINTS
+) as ROUTECLUSTERS
+GROUP BY kmeans_cid
+ORDER BY kmeans_cid
+```
+<img src='./assets/images/ST_Group.png'/>
+We can save this data into the ROUTE_CLUSTERS temp table.
+
+5. Next we need to get the center point of each of the 10 clusters (for drawing boundaries)
+	- Docs <a href='https://postgis.net/docs/ST_Centroid.html' target='_blank'>https://postgis.net/docs/ST_Centroid.html</a> 
+	- Video <a href="https://youtu.be/g4DgAVCmiDE?t=2466" target="_blank">https://youtu.be/g4DgAVCmiDE?t=2466</a>
+	- SQL
+```sql
+SELECT 
+	cid, 
+	ST_Centroid(geom)::geography as centroid
+FROM ROUTE_CLUSTERS
+```
+<img src='./assets/images/ST_Centroid.png'/>
+
+6. We also need to draw the boundary squares using ST_VoronoiPolygons. This algo is good for turning points data into polygon data (this one looks messy but we need this data to use as an input to clip in the next step)
+	- Docs <a href='https://postgis.net/docs/ST_VoronoiPolygons.html' target='_blank'>https://postgis.net/docs/ST_VoronoiPolygons.html</a> 
+	- Video <a href="https://youtu.be/g4DgAVCmiDE?t=2476" target="_blank">https://youtu.be/g4DgAVCmiDE?t=2476</a>
+	- SQL
+```sql
+SELECT 
+	cid, 
+	ST_VoronoiPolygons(geom)::geography as vor
+FROM ROUTE_CLUSTERS
+```
+<img src='./assets/images/ST_VoronoiPolygons.png'/>
+This image above looks crowed with all 10 clusters. Here is what just one clusters Voronoi Polygon looks like:
+<img src='./assets/images/ST_VoronoiPolygons_C1.png'/>
+
+7. Clip the lines to be in bounds of our 10 cluster region polygons using intersects (now its starting to look good!)
+	- Docs <a href='https://postgis.net/docs/ST_Intersection.html' target='_blank'>https://postgis.net/docs/ST_Intersection.html</a> 
+	- Video <a href="https://youtu.be/g4DgAVCmiDE?t=2486" target="_blank">https://youtu.be/g4DgAVCmiDE?t=2486</a>
+	- SQL
+```sql 
+SELECT 
+	cid, 
+	ST_Intersection(
+		ST_VoronoiPolygons(geom), 
+		ST_ConcaveHull(geom, .99)::geography
+	) as geom
+FROM ROUTE_CLUSTERS
+```
+<img src='./assets/images/ST_Intersects.png'/>
+We can save this into the temp table ROUTE_POLYGONS.
+
+8. The last step is to union the clusters and points onto one neat map. 
+```sql
+SELECT cid, geom::geography FROM ROUTE_CLUSTERS
+UNION
+SELECT cid, geom::geography FROM ROUTE_POLYGONS
+```
+And thats the Smart Route!
+<img src='./assets/images/ST_SmartRoute.png'/>
+
 
 More queries here: <a href="https://github.com/opencircular/opencircular/blob/master/src/blockchain/hyperledger/smartcontract.readme.md#query-something" target="_blank">https://github.com/opencircular/opencircular/blob/master/src/blockchain/hyperledger/smartcontract.readme.md#query-something</a>
