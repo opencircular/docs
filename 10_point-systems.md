@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Point Systems
+title: Point Systems (*WIP)
 permalink: /point-systems
 nav_order: 10
 has_children: false

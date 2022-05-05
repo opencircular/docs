@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Open Circular Network
+title: Open Circular Network (*WIP)
 permalink: /open-circular-network
 nav_order: 7
 has_children: false
