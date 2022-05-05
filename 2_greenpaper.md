@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Greenpaper
+title: Greenpaper (*WIP)
 permalink: /greenpaper
 nav_order: 2
 has_children: false
