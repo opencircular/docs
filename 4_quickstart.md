@@ -31,7 +31,7 @@ debug tab in vsode > choose `Debug PlastiCoin (services)` > green play button
 ```
 http://localhost:3999/graphql - This should boot the GraphQL explorer (gateway.ts) and you need a token to query the api see [GraphQL Explorer docs](#GraphQL-Explorer)
 
-(2) Start the Blockchain
+(2) Start the Blockchain (* wip, can be skipped, optional)
 ------------------
 [Readme](https://github.com/opencircular/opencircular/blob/master/src/blockchain/hyperledger/readme.md)
 1. Open the `blockchain.code-workspace`
